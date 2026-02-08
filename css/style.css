@@ -1,1 +1,273 @@
 
+/* RESET */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #ffd1dc, #ffb6c1, #ffc0cb);
+  overflow-x: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+}
+
+/* FLOATING HEARTS */
+.hearts span {
+  position: absolute;
+  bottom: -50px;
+  width: 20px;
+  height: 20px;
+  background: #ff5c8d;
+  transform: rotate(45deg);
+  animation: floatUp 10s linear infinite;
+  opacity: 0.7;
+}
+
+.hearts span::before,
+.hearts span::after {
+  content: '';
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  background: #ff5c8d;
+  border-radius: 50%;
+}
+
+.hearts span::before { top: -10px; left: 0; }
+.hearts span::after { left: -10px; top: 0; }
+
+/* HEART VARIANTS */
+.hearts span:nth-child(1){ left:10%; animation-duration:9s; }
+.hearts span:nth-child(2){ left:20%; animation-duration:12s; }
+.hearts span:nth-child(3){ left:30%; animation-duration:8s; }
+.hearts span:nth-child(4){ left:40%; animation-duration:14s; }
+.hearts span:nth-child(5){ left:50%; animation-duration:10s; }
+.hearts span:nth-child(6){ left:60%; animation-duration:11s; }
+.hearts span:nth-child(7){ left:70%; animation-duration:13s; }
+.hearts span:nth-child(8){ left:80%; animation-duration:9s; }
+.hearts span:nth-child(9){ left:90%; animation-duration:15s; }
+.hearts span:nth-child(10){ left:95%; animation-duration:7s; }
+
+@keyframes floatUp {
+  0% { transform: translateY(0) rotate(45deg); opacity: 0; }
+  10% { opacity: .8; }
+  100% { transform: translateY(-120vh) rotate(45deg); opacity: 0; }
+}
+
+/* MAIN CONTAINER */
+.container {
+  min-height: 100vh;
+  width: 100%;
+  max-width: 1200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+  position: relative;
+  z-index: 1;
+}
+
+/* TEXT */
+h1 {
+  font-size: clamp(2rem, 5vw, 4rem);
+  color: #B0003A;
+  font-weight: 800;
+  max-width: 600px;
+}
+
+p {
+  margin-top: 1rem;
+  font-size: clamp(1rem, 3vw, 1.5rem);
+  color: #D81B60;
+}
+
+/* IMAGE */
+.container img {
+  width: min(90vw, 420px);
+  height: auto;
+}
+
+/* BUTTONS (INDEX PAGE) */
+.buttons {
+
+  position: relative;
+  bottom: 1rem;
+  left: 1rem;
+  display: flex;
+    justify-content: flex-end;
+  gap: 1rem;
+  z-index: 2;
+}
+
+ .btn3, .btn4 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  user-select: none;
+  cursor: pointer;
+  font-weight: 700;
+  border-radius: 1rem;
+  transition: transform .3s ease;
+}
+
+/* YES / NO */
+.btn1, .btn2 {
+  width: clamp(120px, 25vw, 160px);
+  height: 3rem;
+  border: 4px solid #AD1457;
+}
+
+.btn1 {
+  background: #AD1457;
+  color: #fff;
+}
+
+.btn2 {
+  color: #AD1457;
+  background: transparent;
+}
+
+.btn1:hover, .btn2:hover,
+.btn3:hover, .btn4:hover {
+  transform: scale(1.05);
+}
+
+/* NO PAGE BUTTONS */
+.button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  width: 100%;
+}
+
+.btn3, .btn4 {
+  width: clamp(120px, 30vw, 180px);
+  height: 3rem;
+  border: 4px solid #AD1457;
+}
+
+.btn3 {
+  background: #AD1457;
+  color: #fff;
+}
+
+.btn4 {
+  background: transparent;
+  color: #AD1457;
+}
+
+/* SMALL SCREENS */
+@media (max-width: 480px) {
+  .buttons {
+    flex-direction: column;
+    right: 1rem;
+    left: auto;
+  }
+}
+
+.box{
+    display: flex;
+    width: 100%;
+    justify-content: center;
+}
+
+/* YES PAGE LAYOUT */
+.box {
+  min-height: 100vh;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1;
+  position: relative;
+}
+
+/* HAPPY IMAGE */
+.happy {
+  width: min(80vw, 350px);
+  height: auto;
+  border-radius: 1.5rem;
+  box-shadow: 0 15px 40px rgba(176, 0, 58, 0.3);
+}
+
+/* YES PAGE HEADING */
+body > h1 {
+  position: absolute;
+  bottom: 2rem;
+  text-align: center;
+  font-size: clamp(1.5rem, 5vw, 3rem);
+  color: #B0003A;
+  font-weight: 800;
+  z-index: 2;
+  padding: 0 1rem;
+}
+
+
+
+.happy {
+  animation: fadeIn 1.2s ease forwards;
+}
+
+.btn3:hover {
+    animation: shake 0.4s;
+}
+
+@keyframes shake {
+    0% { transform: scale(1) rotate(0deg); }
+    25% { transform: scale(1.05) rotate(1deg); }
+    50% { transform: scale(1.05) rotate(-1deg); }
+    75% { transform: scale(1.05) rotate(1deg); }
+    100% { transform: scale(1.05) rotate(0deg); }
+}
+
+
+.heading {
+  max-width: 520px;
+  line-height: 1.1;
+  margin-bottom: 1.5rem;
+}
+
+.heading p {
+  max-width: 480px;
+  margin-top: 1.2rem;
+  line-height: 1.8;
+}
+
+
+p {
+  font-size: clamp(1rem, 2.2vw, 1.35rem);
+  opacity: 0.9;
+}
+
+
+.container img {
+  margin-left: 3rem;
+}
+
+@media (max-width: 768px) {
+  .container img {
+    margin-left: 0;
+  }
+}
+.buttons {
+  margin-top: 2.5rem;
+}
+.no {
+  margin-left: 0.5rem;
+  opacity: 0.8;
+  font-size: 0.95rem;
+}
+
+.hearts span {
+  opacity: 0.45;
+}
+
+
