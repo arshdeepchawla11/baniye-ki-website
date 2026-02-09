@@ -277,3 +277,102 @@ p {
 }
 
 
+/* INDEX PAGE FIXES */
+
+main.container {
+  min-height: 100vh;
+  align-items: center;
+}
+
+.text {
+  max-width: 560px;
+}
+
+.text h1 {
+  margin-bottom: 1rem;
+}
+
+.text p {
+  margin-bottom: 1.2rem;
+}
+
+.image img {
+  width: min(90vw, 420px);
+  height: auto;
+}
+
+.buttons {
+  position: fixed;
+  bottom: 1.5rem;
+  left: 1.5rem;
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+
+/* mobile */
+@media (max-width: 768px) {
+  .buttons {
+    right: 1.5rem;
+    left: auto;
+    flex-direction: column;
+  }
+
+  main.container {
+    padding-bottom: 7rem;
+  }
+}
+
+/* === BUTTON POLISH (INDEX PAGE) === */
+
+.buttons {
+  display: flex;
+  align-items: center;
+  gap: 1.2rem;
+}
+
+/* unify button look */
+.btn1,
+.btn2 {
+  min-width: 140px;
+  height: 44px;
+  padding: 0 1.8rem;
+  border-radius: 999px; /* pill shape */
+  font-size: 0.95rem;
+  letter-spacing: 0.03em;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* YES */
+.btn1 {
+  background: #AD1457;
+  color: #fff;
+  border: none;
+  box-shadow: 0 8px 20px rgba(173, 20, 87, 0.35);
+}
+
+/* NO */
+.btn2 {
+  background: transparent;
+  color: #AD1457;
+  border: 2px solid #AD1457;
+}
+
+/* hover feels intentional */
+.btn1:hover {
+  transform: translateY(-1px) scale(1.05);
+}
+
+.btn2:hover {
+  background: rgba(173, 20, 87, 0.08);
+  transform: translateY(-1px) scale(1.05);
+}
+
+/* text next to buttons */
+.no {
+  margin-left: 0.4rem;
+  font-size: 0.85rem;
+  opacity: 0.75;
+}
